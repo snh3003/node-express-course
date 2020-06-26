@@ -15,6 +15,14 @@ app.get('/get', function(req,res){
 		users: mockUserData
 	})
 })
+app.get('/users/:id', function(req,res){
+	console.log(req.params.id)
+	res.json({
+		success: true,
+		message: "got one user",
+		users: req.params.id
+	})
+})
 // Access methods for creating a server
 
 app.listen(8000, function(){ //
